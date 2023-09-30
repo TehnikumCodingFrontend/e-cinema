@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#background {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: no-repeat url("./../img/background.jpg");
+  // background-size: cover;
+  background-size: 2200px;
+
+  -webkit-animation: slidein 70s;
+  animation: slidein 70s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@media (min-width: 1920px) {
+  #background {
+    background-size: cover;
+  }
+}
+
+@keyframes backAnim {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+  }
+  to {
+    background-position: -100px 0px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+  }
+  to {
+    background-position: -100px 0px;
+  }
+}
+
+body {
+  font-family: "Montserrat";
+  font-size: 16px;
+  color: var(--text-color);
+  min-width: 400px;
+}
+
+.container {
+  padding: calc(3vw + 8.5px); //? 400 - 20px | 1440 - 50px
+}
+
+input,
+button {
+  background-color: var(--elem-bgc);
+  color: inherit;
+  border-radius: 12px;
+
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 10px;
+  outline: 0;
+  border: 0;
+
+  transition: 200ms;
+}
+
+button {
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--prime-color);
+    color: white;
+    scale: 1.1;
+  }
+
+  &:active {
+    transition: 100ms;
+    scale: 0.9;
+  }
+}
+
+._noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
